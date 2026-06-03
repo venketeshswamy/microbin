@@ -1,0 +1,8 @@
+target/
+.git/
+.cargo/
+pasta_data/
+microbin_data/
+*.db
+*.db-journal
+*.log
