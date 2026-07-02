@@ -16,26 +16,44 @@ Test MicroBin at [pub.microbin.eu](https://pub.microbin.eu)!
 
 ### Or host MicroBin yourself
 
-#### 🌟 Custom Version (by Karthik)
-This custom build contains added features:
-- **Clipboard Image Paste**: Intercepts images pasted directly in the content area and attaches them as files instead of raw base64.
-- **Custom URL Slugs**: Allows creating notes with a custom text URL (e.g., `/upload/my-note`) with active duplicate slug rejection.
-
-To pull and run this custom image:
-```bash
-docker pull karthikv03/microbin:latest
-```
-```bash
-docker run -d \
-  -p 3005:8080 \
-  --name microbin \
-  -v microbin_data:/app/pasta_data \
-  -e MICROBIN_PORT=8080 \
-  -e MICROBIN_JSON_DB=true \
-  -e MICROBIN_ETERNAL_PASTA=true \
-  karthikv03/microbin:latest
-```
-
+>[!IMPORTANT]
+> #### 🌟 Custom Version (by Karthik)
+> This custom build contains added features:
+> - **Clipboard Image Paste**: Intercepts images pasted directly in the content area and attaches them as files instead of raw base64.
+>- **Custom URL Slugs**: Allows creating notes with a custom text URL (e.g., `/upload/my-note`) with active duplicate slug rejection.
+>-
+> To pull and run this custom image - Only ARM Compatible:
+> ```bash
+> docker pull karthikv03/microbin:latest
+> ```
+> ```bash
+> docker run -d \
+>  -p 3005:8080 \
+>  --name microbin \
+>  -v microbin_data:/app/pasta_data \
+>  -e MICROBIN_PORT=8080 \
+>  -e MICROBIN_JSON_DB=true \
+>  -e MICROBIN_ETERNAL_PASTA=true \
+>  karthikv03/microbin:latest
+>```
+> ##### You can also Run the executable file
+> ###### Steps
+>Step 1. Download the Executable File <br>
+>Step 2. Save that Executable File into a folder<br>
+>Step 3. Open Command Prompt<br>
+>Step 4. Change to the Directory in Command Prompt using "cd" Command<br>
+>Step 5: Run the following Code<br>
+>```bash
+>\microbin.exe --port 3005 --bind 0.0.0.0 --data-dir pasta_data --json-db --eternal-pasta
+>```
+>Meaning <br>
+>--port -> the Port in which the app runs<br>
+>--bind -> For which all IP's you want the address to be visible? - Generally recommended to leave as it is <br>
+>--pasta-dir -> Directory name in which the files are to be stored <br>
+>--json-db -> Directing to use JSON DB <br>
+>--eternal-pasta -> Saying that kindly keep the pastes eternally unless user deletes it. <br>
+> You can give more such commands based on the admin panel
+<br><br><br>
 #### 📦 Original Version
 Run the quick docker setup script for the official image ([DockerHub](https://hub.docker.com/r/danielszabo99/microbin)):
 ```bash
